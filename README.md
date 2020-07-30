@@ -57,5 +57,10 @@ After downloading iOS system symbols you might want to list all
 
 ### Script
 
-`TODO`
+Python script to create a json file in wich key equals binary image name and value equals the absolute path name
+
+Example
+```python
+python listSymbols.py -p "/Users/<UserName>/Library/Developer/Xcode/iOS DeviceSupport/13.5.1 (17F80)/Symbols"
+```
 
