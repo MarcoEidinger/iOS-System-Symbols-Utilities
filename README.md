@@ -3,6 +3,17 @@ Utilities around iOS system symbol. Useful for symbolicating iOS crash reports.
 
 Great source and inspiration: https://github.com/Zuikyo/iOS-System-Symbols
 
+## Motivation
+
+If you want to [symbolicate iOS crash reports by yourself](https://github.com/MarcoEidinger/plcrashreporterusage/tree/master/symbolication) then you need your apps dSYM file, any 3rd party framework dSYM files and iOS System symbols to be able to symbolicate every single stack frame.
+
+You may find out that you can't always symbolicate system code. There're several challenges:
+
+- If you want to symbolicate system frameworks in your crash report, you need the corresponding system symbols, matching the OS Version and CPU architecture.
+- You can obtain systm symbols from physical iOS device(s) as those system symbols are automatically downloaded to `~/Library/Developer/Xcode/iOS DeviceSupport` folder when connecting your iOS device with Xcode. But you might not have the matching iOS device (e.g. iPhone X has arm64 CPU architecture vs. iPhone 11 with arm64e CPU architecture) or the matching OS version installed on the device.
+
+The following tools will help you to overcome those challenges.
+
 ## Extract Symbols from Firmware
 
 ### Manual (for iOS 13.2+ | Xcode 11+)
