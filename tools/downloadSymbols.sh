@@ -35,13 +35,13 @@ FIRMWARE_URL=$(curl -s $API_URL/url)
 FIRMWARE_BUILDID=$(curl -s $API_URL/buildid)
 
 # download firmware (ipsw)
-#curl $FIRMWARE_URL --output firmware.zip --keepalive-time 2
+curl $FIRMWARE_URL --output firmware.zip --keepalive-time 2
 
 # unpack firmware
-#unzip firmware.zip
+unzip firmware.zip
 
 # remove archive as we'll work with unpacked version
-#rm -f firmware.zip
+rm -f firmware.zip
 
 # identify relevant dmg file (it's the largest), e.g 038-35285-082.dmg
 disk=$(du -a * | sort -r -n | head -1 | cut -f2)
